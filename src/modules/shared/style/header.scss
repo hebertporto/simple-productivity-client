@@ -1,0 +1,51 @@
+@import './app.scss';
+
+.header {
+  background-color: rgb(190, 190, 190);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-menu {
+  @media only screen and (max-device-width: 480px) {
+    display: none;
+  }
+}
+
+.header-menu-mobile {
+  display: none;
+  color: white !important;
+  @media only screen and (max-device-width: 480px) {
+    display: inline;
+  }
+}
+
+.nav-main {
+  background-color : $primary-color !important;
+  box-shadow: none !important;
+  color: rgb(255, 255, 255) !important;
+  font-family: 'Roboto', sans-serif !important;
+  padding-left: 8.33333333% !important;
+  padding-right: 8.33333333% !important;
+  /*
+  background-color: rgb(0, 188, 212);
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  box-sizing: border-box;
+  font-family: Roboto,
+  sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px,
+  rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  border-radius: 0px;
+  position: relative;
+  z-index: 1100;
+  width: 100%;
+  display: flex; */
+
+  @media only screen and (max-device-width: 480px) {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
