@@ -12,7 +12,7 @@ import {
   RESTRICTED_AREA,
   NOVEL,
   FORGOT_PASSWORD
-} from './../config/utils/routes'
+} from './../config/constants/routes'
 
 import ForgotPassword from './auth/containers/ForgotPassword'
 import requireAuth from './shared/components/requireAuth'

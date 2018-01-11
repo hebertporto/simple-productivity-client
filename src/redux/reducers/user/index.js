@@ -1,6 +1,6 @@
 import {
   USER_SET_PROFILE
-} from './../../actions/user/types'
+} from './../../types/UserTypes'
 
 import * as user from './reducers'
 

@@ -2,7 +2,7 @@ import {
   AUTH_LOGGED_STATUS,
   AUTH_USER_CREDENTIALS,
   AUTH_RESET_PASSWORD
-} from './../../actions/auth/types'
+} from './../../types/AuthTypes'
 import * as auth from './reducers'
 
 const INITIAL_STATE = {

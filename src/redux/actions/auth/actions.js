@@ -2,10 +2,10 @@ import { toastr } from 'react-redux-toastr'
 import {
   AUTH_LOGGED_STATUS,
   AUTH_RESET_PASSWORD
-} from './types'
+} from '../../types/AuthTypes'
 import {
   USER_SET_PROFILE
-} from './../user/types'
+} from '../../types/UserTypes'
 
 import { setTokenAuth } from '../../../config/headers'
 

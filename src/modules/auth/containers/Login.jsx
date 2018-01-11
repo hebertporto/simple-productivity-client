@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import history from './../../../config/utils/historyRouter'
+import history from './../../../config/historyRouter'
 import { Row, Col } from 'react-flexbox-grid'
 import { Card, CardActions, CardText } from 'material-ui/Card'
 import { FlatButton, TextField } from 'material-ui'
@@ -14,7 +14,7 @@ import {
 
 import {
   HOME
-} from './../../../config/utils/routes'
+} from './../../../config/constants/routes'
 
 import './../style/login.css'
 

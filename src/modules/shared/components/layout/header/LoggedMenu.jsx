@@ -2,10 +2,10 @@ import React from 'react'
 import { IconMenu, IconButton, MenuItem, FlatButton } from 'material-ui'
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
 
-import history from './../../../../../config/utils/historyRouter'
+import history from './../../../../../config/historyRouter'
 
 import { buttonMenu } from './../../../style/inline/button'
-import { HOME, LOGIN } from './../../../../../config/utils/routes'
+import { HOME, LOGIN } from './../../../../../config/constants/routes'
 
 const LoggedMenu = (props) => {
   return (
