@@ -4,7 +4,7 @@ import { Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
 
-import history from './config/utils/historyRouter'
+import history from './config/historyRouter'
 
 import store from './config/store'
 import App from './modules/App'

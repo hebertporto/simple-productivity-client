@@ -12,12 +12,7 @@ import {
 import './../style/home.css'
 
 class Home extends Component {
-  componentDidMount = () => {
-    this.props.fetchAllNovels()
-  }
-
   render () {
-    const { novels } = this.props
     return (
       <SectionCentered>
         <h1>Home Page</h1>
