@@ -17,7 +17,6 @@ const styleButton = {
   margin: 5
 }
 
-
 class TableNovels extends Component {
   state = {
     novels: [],

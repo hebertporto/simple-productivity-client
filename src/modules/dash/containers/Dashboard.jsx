@@ -3,24 +3,25 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import SectionCentered from './../../shared/components/grid/SectionCentered'
+import ProductivityColumns from '../components/ProductivityColumns'
 
 import {
   signOut
 } from './../../../redux/actions/auth/actions'
 
-import './../style/home.css'
+import './../style/dashboard.css'
 
-class Home extends Component {
+class Dashboard extends Component {
   render () {
     return (
       <SectionCentered>
-        <h1>Home Page</h1>
+        <ProductivityColumns />
       </SectionCentered>
     )
   }
 }
 
-Home.propTypes = {
+Dashboard.propTypes = {
   logged: PropTypes.bool
 }
 
@@ -36,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
