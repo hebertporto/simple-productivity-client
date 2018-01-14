@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReduxToastr from 'react-redux-toastr'
 import { connect } from 'react-redux'
-import { AppBar } from 'material-ui'
+import { AppBar, IconButton } from 'material-ui'
+
+import ActionEdit from 'material-ui/svg-icons/content/create'
 
 import SectionFullWidth from './../grid/SectionFullWidth'
 import LoggedMenu from './header/LoggedMenu'
@@ -19,9 +21,15 @@ class Header extends Component {
     return (
       <SectionFullWidth>
         <AppBar
-          title='Super Web'
+          title='PRODUCTIVITY'
           className='nav-main'
+          titleStyle={{
+            color: '#1C5A66',
+            fontWeight: 'bolder',
+            letterSpacing: '0.1em'
+          }}
           showMenuIconButton={false}
+          iconElementLeft={<IconButton><ActionEdit /></IconButton>}
           iconElementRight={logged ? <LoggedMenu /> : <LoggedMenu />}
         />
         <ReduxToastr

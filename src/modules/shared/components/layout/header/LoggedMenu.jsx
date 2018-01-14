@@ -18,18 +18,6 @@ const LoggedMenu = (props) => {
           onClick={() => history.push(HOME)}
         />
         <FlatButton
-          label='Destaques'
-          style={buttonMenu}
-          hoverColor='rgb(49, 131, 179)'
-          onClick={() => history.push(HOME)}
-        />
-        <FlatButton
-          label='Usuários'
-          style={buttonMenu}
-          hoverColor='rgb(49, 131, 179)'
-          onClick={() => history.push(HOME)}
-        />
-        <FlatButton
           label='Logout'
           style={buttonMenu}
           hoverColor='rgb(49, 131, 179)'
@@ -47,14 +35,6 @@ const LoggedMenu = (props) => {
         >
           <MenuItem
             primaryText='Home'
-            onClick={() => history.push(HOME)}
-          />
-          <MenuItem
-            primaryText='Destaques'
-            onClick={() => history.push(HOME)}
-          />
-          <MenuItem
-            primaryText='Usuários'
             onClick={() => history.push(HOME)}
           />
           <MenuItem
