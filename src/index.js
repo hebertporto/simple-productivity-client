@@ -9,8 +9,6 @@ import history from './config/historyRouter'
 import store from './config/store'
 import App from './modules/App'
 
-import 'normalize.css'
-
 persistStore(store, {
   whitelist: [
     ''

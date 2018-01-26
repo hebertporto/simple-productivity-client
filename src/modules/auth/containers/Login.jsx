@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import history from './../../../config/historyRouter'
-import { Row, Col } from 'react-flexbox-grid'
-import { Card, CardActions, CardText } from 'material-ui/Card'
-import { FlatButton, TextField } from 'material-ui'
 
 import SectionCentered from './../../shared/components/grid/SectionCentered'
 
@@ -47,7 +44,8 @@ class Login extends Component {
     const { email, password } = this.state
     return (
       <SectionCentered>
-        <Col xs={12} md={12}>
+        <div />
+        {/* <Col xs={12} md={12}>
           <Row>
             <Col mdOffset={5} xs={12} md={4} className='login-box'>
               <Card>
@@ -82,7 +80,7 @@ class Login extends Component {
               </Card>
             </Col>
           </Row>
-        </Col>
+        </Col> */}
       </SectionCentered>
     )
   }

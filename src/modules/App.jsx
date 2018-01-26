@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Router from './Router'
 
 import Header from './shared/components/layout/Header'
 
 import './shared/style/app.css'
+import 'semantic-ui-css/semantic.min.css'
 
 class App extends Component {
   render () {
     return (
-      <MuiThemeProvider>
-        <div>
-          <Header />
-          <Router />
-        </div>
-      </MuiThemeProvider>
+      <div>
+        <Header />
+        <Router />
+      </div>
     )
   }
 }

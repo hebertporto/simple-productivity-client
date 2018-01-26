@@ -1,16 +1,12 @@
 import React from 'react'
-import { Grid, Row, Col } from 'react-flexbox-grid'
+import { Grid } from 'semantic-ui-react'
 
 const SectionCentered = (props) => {
   return (
-    <Grid fluid>
-      <Row>
-        <Col mdOffset={1} xs={12} md={10}>
-          <Row>
-            {props.children}
-          </Row>
-        </Col>
-      </Row>
+    <Grid centered columns={1}>
+      <Grid.Column mobile={16} tablet={14} computer={14}>
+        {props.children}
+      </Grid.Column>
     </Grid>
   )
 }
