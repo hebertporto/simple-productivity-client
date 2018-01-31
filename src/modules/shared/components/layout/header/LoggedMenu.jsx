@@ -1,50 +1,18 @@
 import React from 'react'
-import { IconMenu, IconButton, MenuItem, FlatButton } from 'material-ui'
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert'
+import PropTypes from 'prop-types'
 
-import history from './../../../../../config/historyRouter'
+import { Menu } from 'semantic-ui-react'
+import If from '../../helpers/If'
 
-import { buttonMenu } from './../../../style/inline/button'
-import { HOME, LOGIN } from './../../../../../config/constants/routes'
+const LoggedMenu = props => (
+  <If test={props.logged}>
+    <Menu.Item name='Sign-out' onClick={() => alert('sign-out')} />
+  </If>
+)
 
-const LoggedMenu = (props) => {
-  return (
-    <div>
-      <div className='header-menu'>
-        <FlatButton
-          label='Home'
-          style={buttonMenu}
-          hoverColor='rgb(49, 131, 179)'
-          onClick={() => history.push(HOME)}
-        />
-        <FlatButton
-          label='Logout'
-          style={buttonMenu}
-          hoverColor='rgb(49, 131, 179)'
-          onClick={() => history.push(LOGIN)}
-        />
-      </div>
-      <div className='header-menu-mobile'>
-        <IconMenu
-          {...props}
-          iconButtonElement={
-            <IconButton><MoreVertIcon /></IconButton>
-          }
-          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
-          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
-        >
-          <MenuItem
-            primaryText='Home'
-            onClick={() => history.push(HOME)}
-          />
-          <MenuItem
-            primaryText='Logout'
-            onClick={() => history.push(LOGIN)}
-          />
-        </IconMenu>
-      </div>
-    </div>
-  )
+LoggedMenu.PropTypes = {
+  logged: PropTypes.bool.isRequired,
+  logoutFunc: PropTypes.func.isRequired
 }
 
 export default LoggedMenu

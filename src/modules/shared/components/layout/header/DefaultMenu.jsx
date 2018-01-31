@@ -1,58 +1,18 @@
-import React, { Component } from 'react'
-import { FlatButton, Dialog } from 'material-ui'
-import { Row, Col } from 'react-flexbox-grid'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-class DefaultMenu extends Component {
-  state = {
-    open: false
-  }
+import { Menu } from 'semantic-ui-react'
+import If from '../../helpers/If'
 
-  handleOpen = () => {
-    this.setState({ open: true })
-  }
+const DefaultMenu = props => (
+  <If test={!props.logged}>
+    <Menu.Item name='Sign-up' onClick={() => alert('sign in')} />
+    <Menu.Item name='Login-in' onClick={() => alert('login')} />
+  </If>
+)
 
-  handleClose = () => {
-    this.setState({ open: false })
-  }
-
-  render () {
-    const customContentStyle = {
-      width: '100%',
-      maxWidth: 'none'
-    }
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onClick={this.handleClose}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        keyboardFocused={true}
-        onClick={this.handleClose}
-      />
-    ]
-    return (
-      <div>
-        <FlatButton {...this.props} label="Login" onClick={this.handleOpen} />
-        <Row>
-          <Col mdOffset={4} xs={12} md={4}>
-            <Dialog
-              title="Dialog With Actions"
-              actions={actions}
-              modal={false}
-              open={this.state.open}
-              contentStyle={customContentStyle}
-              onRequestClose={this.handleClose}
-            >
-                  The actions in this window were passed
-            </Dialog>
-          </Col>
-        </Row>
-      </div>
-    )
-  }
+DefaultMenu.PropTypes = {
+  logged: PropTypes.bool.isRequired
 }
 
 export default DefaultMenu
