@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 import SectionCentered from './../grid/SectionCentered'
 import LoggedMenu from './header/LoggedMenu'
-import DefaultMenu from './header/DefaultMenu'
 
 import { signOut } from './../../../../redux/actions/auth/actions'
 
@@ -16,7 +15,7 @@ class Header extends Component {
 
   renderLoggedMenu = () => (
     <LoggedMenu
-      logoutFunc={() => alert('aaa')}
+      logoutFunc={() => this.props.signOut()}
     />
   )
 
@@ -25,7 +24,7 @@ class Header extends Component {
     return (
       <SectionCentered>
         <Menu borderless={false} stackable size='large'>
-          {logged ? this.renderLoggedMenu : <DefaultMenu />}
+          {logged && this.renderLoggedMenu}
         </Menu>
       </SectionCentered>
     )
