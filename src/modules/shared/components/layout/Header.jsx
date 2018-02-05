@@ -14,15 +14,18 @@ import './../../style/header.css'
 class Header extends Component {
   state = {}
 
+  renderLoggedMenu = () => (
+    <LoggedMenu
+      logoutFunc={() => alert('aaa')}
+    />
+  )
+
   render () {
     const { logged } = this.props
     return (
       <SectionCentered>
-        <Menu borderless='false' stackable size='large'>
-          <Menu.Menu position='right'>
-            <LoggedMenu logged={logged} />
-            <DefaultMenu logged={logged} logoutFunc={() => alert('aaa')} />
-          </Menu.Menu>
+        <Menu borderless={false} stackable size='large'>
+          {logged ? this.renderLoggedMenu : <DefaultMenu />}
         </Menu>
       </SectionCentered>
     )
