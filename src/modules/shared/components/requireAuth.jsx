@@ -14,7 +14,7 @@ export default function (ComposedComponent) {
     }
 
     componentWillReceiveProps (nextProps) {
-      if (!this.props.logged) {
+      if (!nextProps.logged) {
         this.redirectNotLoggedIn()
       }
     }

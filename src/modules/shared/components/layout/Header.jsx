@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Menu } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 import SectionCentered from './../grid/SectionCentered'
@@ -11,21 +10,12 @@ import { signOut } from './../../../../redux/actions/auth/actions'
 import './../../style/header.css'
 
 class Header extends Component {
-  state = {}
-
-  renderLoggedMenu = () => (
-    <LoggedMenu
-      logoutFunc={() => this.props.signOut()}
-    />
-  )
-
+  logOff = () => this.props.signOut()
   render () {
     const { logged } = this.props
     return (
       <SectionCentered>
-        <Menu borderless={false} stackable size='large'>
-          {logged && this.renderLoggedMenu}
-        </Menu>
+        {logged && <LoggedMenu logoutFunc={this.logOff} />}
       </SectionCentered>
     )
   }
