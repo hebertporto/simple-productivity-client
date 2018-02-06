@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Router from './Router'
+import ReduxToastr from 'react-redux-toastr'
 
 import Header from './shared/components/layout/Header'
 
@@ -12,6 +13,14 @@ class App extends Component {
       <div>
         <Header />
         <Router />
+        <ReduxToastr
+          timeOut={4000}
+          newestOnTop={false}
+          preventDuplicates
+          position="top-left"
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+          progressBar/>
       </div>
     )
   }

@@ -1,4 +1,3 @@
-import { toastr } from 'react-redux-toastr'
 import {
   AUTH_LOGGED_STATUS,
   AUTH_RESET_PASSWORD
@@ -8,17 +7,20 @@ import {
 } from '../../types/UserTypes'
 
 import { setTokenAuth } from '../../../config/headers'
+import { handleMessage } from '../toastr/actions'
 
 import { firebase } from './../../../config/firebase'
 
 const createAction = (type, payload) => ({ type, payload })
 
 export function resetPassword (email) {
-  return (dispatch) => {
-    firebase.auth().sendPasswordResetEmail(email)
-      .then((response) => {
-        dispatch(createAction(AUTH_RESET_PASSWORD, true))
-      })
+  return async (dispatch) => {
+    try {
+      await firebase.auth().sendPasswordResetEmail(email)
+      dispatch(createAction(AUTH_RESET_PASSWORD, true))
+    } catch (error) {
+      dispatch(createAction(AUTH_RESET_PASSWORD, false))
+    }
   }
 }
 
@@ -37,23 +39,40 @@ export function signinSignup (email, password) {
         if (user && user.email) {
           dispatch([
             createAction(USER_SET_PROFILE, user),
-            createAction(AUTH_LOGGED_STATUS, true)
+            createAction(AUTH_LOGGED_STATUS, true),
+            handleMessage('success', 'login', 'deu certo')
           ])
         }
       })
       .catch((error) => {
-        console.log('error', error)
+        dispatch(handleMessage('error', 'login', error.message))
       })
   }
 }
 
 export function signOut () {
-  console.log('=:)')
-  toastr.success('The title', 'The message')
-  return (dispatch) => {
-    firebase.auth().signOut()
-      .then((response) => {
-        dispatch(createAction(AUTH_LOGGED_STATUS, false))
+  return async (dispatch) => {
+    try {
+      await firebase.auth().signOut()
+      dispatch(createAction(AUTH_LOGGED_STATUS, false))
+    } catch (error) {
+      dispatch(createAction(AUTH_LOGGED_STATUS, false))
+    }
+  }
+}
+
+export const updateProfile = async function () {
+  return async (dispatch) => {
+    try {
+      const user = await firebase.auth().currentUser
+      user.updateProfile({
+        displayName: 'Jane Q. User',
+        photoURL: 'https://example.com/jane-q-user/profile.jpg'
       })
+      return dispatch(createAction(AUTH_LOGGED_STATUS, false))
+    } catch (error) {
+      console.log('error', error)
+      return dispatch(createAction(AUTH_LOGGED_STATUS, false))
+    }
   }
 }

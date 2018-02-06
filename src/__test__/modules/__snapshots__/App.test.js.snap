@@ -20,6 +20,15 @@ ShallowWrapper {
       "children": Array [
         <Connect(Header) />,
         <Router />,
+        <Connect(ReduxToastr)
+          newestOnTop={false}
+          position="top-left"
+          preventDuplicates={true}
+          progressBar={true}
+          timeOut={4000}
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+/>,
       ],
     },
     "ref": null,
@@ -42,6 +51,23 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "newestOnTop": false,
+          "position": "top-left",
+          "preventDuplicates": true,
+          "progressBar": true,
+          "timeOut": 4000,
+          "transitionIn": "fadeIn",
+          "transitionOut": "fadeOut",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": "div",
   },
@@ -54,6 +80,15 @@ ShallowWrapper {
         "children": Array [
           <Connect(Header) />,
           <Router />,
+          <Connect(ReduxToastr)
+            newestOnTop={false}
+            position="top-left"
+            preventDuplicates={true}
+            progressBar={true}
+            timeOut={4000}
+            transitionIn="fadeIn"
+            transitionOut="fadeOut"
+/>,
         ],
       },
       "ref": null,
@@ -72,6 +107,23 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "newestOnTop": false,
+            "position": "top-left",
+            "preventDuplicates": true,
+            "progressBar": true,
+            "timeOut": 4000,
+            "transitionIn": "fadeIn",
+            "transitionOut": "fadeOut",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
