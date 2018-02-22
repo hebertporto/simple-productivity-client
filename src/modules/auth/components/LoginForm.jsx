@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Button, Form, Grid } from 'semantic-ui-react'
-
+import { Button, Form, Grid, Message, Segment, Container } from 'semantic-ui-react'
 import '../style/loginForm.css'
 
 class LoginForm extends Component {
@@ -27,19 +26,43 @@ class LoginForm extends Component {
   render () {
     const { email, password } = this.state
     return (
-      <Grid className='lf-wrapper' centered columns={1}>
+      <Grid className="lf-wrapper" centered columns={1}>
         <Grid.Column mobile={15} tablet={10} computer={4}>
-          <Form className='lf-form'>
-            <Form.Field>
-              <label>Email</label>
-              <input placeholder='Email' name='email' value={email} onChange={this.handleChange} />
-            </Form.Field>
-            <Form.Field>
-              <label>Password</label>
-              <input placeholder='Password' name='password' type='password' value={password} onChange={this.handleChange} />
-            </Form.Field>
-            <Button onClick={this.handleSubmit} type='submit'>Submit</Button>
+          <Container as='h2' textAlign='center'>
+            <span className='lf-title'>PRODUCTIVITY</span>
+          </Container>
+          <Form size='large'>
+            <Segment piled>
+              <Form.Field>
+                <label>Email</label>
+                <Form.Input
+                  fluid
+                  icon='user'
+                  iconPosition='left'
+                  placeholder='Email'
+                  name='email'
+                  value={email}
+                  onChange={this.handleChange}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Password</label>
+                <Form.Input
+                  fluid
+                  placeholder='Password'
+                  name='password'
+                  type='password'
+                  value={password}
+                  icon='lock'
+                  iconPosition='left'
+                  onChange={this.handleChange} />
+              </Form.Field>
+              <Button onClick={this.handleSubmit} color='teal' fluid size='large'>Login</Button>
+            </Segment>
           </Form>
+          <Message>
+            New to us? <a href='/'>Sign Up</a>
+          </Message>
         </Grid.Column>
       </Grid>
 
