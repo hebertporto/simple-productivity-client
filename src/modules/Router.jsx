@@ -21,8 +21,8 @@ import NoMatch from './shared/containers/NoMatch'
 const Router = props => (
   <Switch>
     <Route exact path={LOGIN} component={Login} />
-    <Route exact path={HOME} component={requireAuth(Home)} />
-    <Route exact path={DASHBOARD} component={requireAuth(Dashboard)} />
+    <Route exact path={HOME} component={Home} />
+    <Route exact path={DASHBOARD} component={Dashboard} />
     <Route exact path={FORGOT_PASSWORD} component={ForgotPassword} />
     <Route exact path={RESTRICTED_AREA} component={requireAuth(RestrictedArea)} />
     <Route component={NoMatch} />
