@@ -12,8 +12,12 @@
   background-color: aqua;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
-  width: 100%;
+  * {
+    flex: 1;
+  }
 }
 
 .pd-column-2 {
