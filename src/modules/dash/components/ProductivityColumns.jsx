@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 
-import '../style/ProductivityColumns.css'
 import { ColumnClient } from './ColumnClient'
+import { ColumnNote } from './ColumnNote'
+import { ColumnTask } from './ColumnTask'
+import { ColumnProject } from './ColumnProject'
+
+import '../style/ProductivityColumns.css'
 
 class ProductivityColumns extends Component {
   state = {
@@ -12,15 +16,9 @@ class ProductivityColumns extends Component {
     return (
       <div className="pd-wrapper">
         <ColumnClient />
-        <div className='pd-column-2'>
-          <h1>Column 2</h1>
-        </div>
-        <div className='pd-column-3'>
-          <h1>Column 3</h1>
-        </div>
-        <div className='pd-column-4'>
-          <h1>Column 4</h1>
-        </div>
+        <ColumnProject />
+        <ColumnTask />
+        <ColumnNote />
       </div>
     )
   }
