@@ -40,7 +40,7 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-multi": "^0.1.12",
-    "redux-persist": "4.8.2",
+    "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
     "seamless-immutable": "^7.1.2",
     "semantic-ui-css": "^2.2.12",
